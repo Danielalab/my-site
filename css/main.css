@@ -51,6 +51,10 @@ p {
   line-height: 1.5;
 }
 
+ul {
+  list-style: none;
+}
+
 section a {
   color: #007BFF;
 }
@@ -65,7 +69,7 @@ section a {
 
 
 .bg-repeat {
-  background:rgb(255, 112, 112);
+  background:#ff7070;
   color: #ffffff;
 }
 
@@ -76,15 +80,19 @@ section a {
 .right {
   float: right;
 }
-  /* background-color: #007BFF; */
-  /*   */
+
 .btn {
-  background-color: rgb(33, 185, 53);
+  background-color: #20c433; /*#21b935*/
   border-radius: 5px;
   color: #ffffff;
+  cursor: pointer;
   display: inline-block;
+  transition: background-color 200ms;      
 }
 
+.btn:hover {
+  background-color: #3adf4d;
+}
 /* mobile style */
 
 header>nav {
@@ -153,10 +161,13 @@ section>span.btn {
 
 section>div {
   border: 1px solid #d8d4d4;
+  border-radius: 6px;
   margin: 5vh 0;  
 }
 
 section>div>figure>img {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px; 
   width: 100%;
 }  
 section>div>div {
@@ -164,7 +175,10 @@ section>div>div {
 }
 
 .btn-container {
-  border-top: 1px solid #d8d4d4;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e9e4e4;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;  
   padding: 15px 20px;
 }
 
@@ -188,15 +202,18 @@ footer {
     display: none;
   }
 
-  ul {
-    list-style: none;
+  li {
+    cursor: pointer;
+    float: left;
+    margin: 0 2px;
+    padding: 5px 15px;
+    transition: border 100ms;
   }
 
-  li {
-    float: left;
-    margin: 5px 10px;
-    padding: 5px;
-  }
+  li:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 7px;
+  } 
 
   header>nav {
     padding-top: 1.5%;
@@ -216,3 +233,34 @@ footer {
     padding: 2% 3%;
   }
 }
+
+/* style js */
+
+@media (max-width:768px) {
+  .menu-hidden {
+    display: none;
+  }
+  
+  .menu-visible {
+    background-color: #d49b9b;  
+    display: block;
+    position: absolute;
+    padding: 0;
+    text-align: center;
+    top: 110px;
+    left: 40%;
+    width: 60%;
+  }
+  
+  .menu-visible>li {
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    transition: background-color 200ms ;    
+  }  
+  
+  .menu-visible>li:hover {
+    background-color: #9e4053;
+  }
+}
+
